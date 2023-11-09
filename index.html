@@ -1,12 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <title>Website Template</title>
+    <style>
+        body {
+            scrollbar-width: thin; 
+            scrollbar-color: #333333 #f5f5f5;
+            -ms-overflow-style: none; 
+        }
+
+        body::-webkit-scrollbar {
+            width: 12px; 
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #333333;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: #f5f5f5; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .black-block {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            color: white;
+            padding: 30px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 0;
+        }
+        
+        .options a {
+            position: relative;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 15px;
+            overflow: hidden;
+        }
+        
+        .options a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 75%);
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+        
+        .options a:hover::before {
+            opacity: 0;
+        }
+
+        .content {
+            padding: 30px;
+            color: white;
+        }
+
+
+        section {
+            padding: 20px 0;
+        }
+
+        #content {
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 30px;
+            border-radius: 15px;
+            margin: 30px;
+        }
+        #aboutMeContent {
+            display: none; 
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <div class="black-block">
+        <h1>Red's tavern</h1>
+        <div class="options">
+            <a style="font-size: 160%;" onclick="toggleAboutMe()">About Me</a>
+            <a href="#introduction" style="font-size: 160%;">Introduction</a>
+            <a href="#contact" style="font-size: 160%;">Contact</a>
+        </div>
+    </div>
 
+    <div align="center" class="content" id="content">
+        <div id = "all">
+            <section id="about">
+                <h2 style="font-size: 160%;">🦊 ~ 𝓐𝓫𝓸𝓾𝓽 𝓶𝓮 ~ 🦊</h2>
+                <p style="font-size: 160%;">Hi, this is fox. A coding student and programmer. I spend my free time working on various projects and studying. I'm currently learning various algorithms, pointers, and much more. Feel free to contact me on my social media 😄😄😄.</p>
+            </section>
+
+            <section id="introduction">
+                <h2 style="font-size: 160%;">🦊 ~ 𝓘𝓷𝓽𝓻𝓸𝓭𝓾𝓬𝓽𝓲𝓸𝓷 ~ 🦊</h2>
+                <p style="font-size: 160%;">Hey people!</p>
+            </section>
+
+            <section id="contact">
+                <h2 style="font-size: 160%;">🦊 ~ 𝓒𝓸𝓷𝓽𝓪𝓬𝓽 ~ 🦊</h2>
+                <p style="font-size: 160%;">I'm a bit shy, no contact details for now!</p>
+            </section>
+        </div>
+        <div id="aboutMeContent"> 
+                <h2 style="font-size: 160%;">🦊 ~ 𝓐𝓫𝓸𝓾𝓽 𝓶𝓮 ~ 🦊</h2>
+                <p style="font-size: 160%;">Hi</p>
+        </div>
+    </div>
+
+    <script>
+        let aboutMeClicked = false;
+
+        function toggleAboutMe() {
+            const allContent = document.getElementById('all');
+            const aboutMeContent = document.getElementById('aboutMeContent');
+
+            if (aboutMeClicked) {
+                allContent.style.display = 'block'; 
+                aboutMeContent.style.display = 'none';
+                aboutMeClicked = false;
+            } else {
+                allContent.style.display = 'none';
+                aboutMeContent.style.display = 'block'; 
+                aboutMeClicked = true;
+            }
+        }
+    </script>
 </body>
-</html> 
+</html>

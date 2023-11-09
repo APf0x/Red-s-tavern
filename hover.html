@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hover Over Text Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .dropdown-nav-outer-wrapper {
+            position: relative;
+        }
+
+    
+        .hidden-options {
+            display: none;
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+       
+        .hover-text:hover + .hidden-options {
+            display: block;
+        }
+
+      
+        .hidden-options li {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .hidden-options li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown-nav-outer-wrapper">
+        <p class="hover-text">Hover over me</p>
+        <ul class="hidden-options">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+        </ul>
+    </div>
+</body>
+
+</html>

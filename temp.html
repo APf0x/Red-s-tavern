@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome WM Comprehensive Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Comprehensive Guide to Awesome Window Manager (Awesome WM)</h1>
+
+    <h2>Introduction to Awesome WM</h2>
+    <p>
+        Awesome is a dynamic window manager for the X Window System that is highly configurable, fast, and primarily targeted at power users who want to have fine-grained control over their window manager. It is written and configured in Lua.
+    </p>
+
+    <h2>Getting Started</h2>
+    <p>To install Awesome WM on various Linux distributions, refer to their respective package managers. For Ubuntu:</p>
+    <code>sudo apt update</code><br>
+    <code>sudo apt install awesome</code>
+
+    <h2>Basic Configurations</h2>
+    <p>To configure Awesome WM, modify the <code>rc.lua</code> file located at <code>~/.config/awesome/rc.lua</code>. Here are some sample configurations:</p>
+    <code>-- Change the default theme</code><br>
+    <code>beautiful.init("~/.config/awesome/themes/mytheme/theme.lua")</code><br>
+
+
+    <h2>Keybindings</h2>
+    <p>Customize keybindings in Awesome WM to suit your preferences:</p>
+    <code>awful.key({ modkey }, "b", function () myscreen = mouse.screen; myscreen.bar.visible = not myscreen.bar.visible end, {description = "toggle wibar", group = "awesome"})</code>
+
+    <h2>Useful Resources</h2>
+    <p>Explore the official Awesome WM documentation and community for further information and support:</p>
+    <ul>
+        <li><a href="https://awesomewm.org/">Awesome WM Official Website</a></li>
+        <li><a href="https://github.com/awesomeWM/awesome">Awesome WM GitHub Repository</a></li>
+
+    </ul>
+</body>
+
+</html>
