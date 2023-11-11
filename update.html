@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Actions Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: rgb(255, 255, 255);
+        }
+
+        pre {
+            background-color: #1c1e1f;
+            border: 2px solid #ffffff;
+            padding: 10px;
+            overflow: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <br>
+        <div class="content">
+        <div class="back-arrow" onclick="window.location.href='index.html'">← go back</div>
+            <h1 >GitHub Actions Tutorial</h1>
+
+            <h2>Introduction</h2>
+            <p>GitHub Actions is a powerful tool that allows you to automate workflows directly in your GitHub repository. You
+                can use it to build, test, and deploy your projects.</p>
+
+            <h2>Getting Started</h2>
+            <p>To get started with GitHub Actions, you need to create a workflow file named
+                <code>.github/workflows/main.yml</code> in your repository.</p>
+
+            <h2>Creating a Simple Workflow</h2>
+            <p>Let's create a simple workflow that runs on every push to the main branch:</p>
+
+            <pre><code class="language-yaml">
+        name: Simple Workflow
+
+        on:
+          push:
+            branches:
+              - main
+
+        jobs:
+          build:
+            runs-on: ubuntu-latest
+
+            steps:
+              - name: Checkout repository
+                uses: actions/checkout@v2
+
+              - name: Set up Node.js
+                uses: actions/setup-node@v4
+                with:
+                  node-version: '14'
+
+              - name: Install dependencies
+                run: npm install
+
+              - name: Build
+                run: npm run build
+            </code></pre>
+
+            <h2>Understanding the Workflow</h2>
+            <p>GitHub Actions workflows are defined in a YAML file, typically located in the <code>.github/workflows</code>
+                directory of your repository. Let's explore the key components of the provided workflow:</p>
+            <ul>
+                <li><strong>Trigger:</strong> The trigger specifies when the workflow should run. In this case, the workflow is
+                    configured to execute on every push event to the main branch. This ensures that changes made to the main
+                    branch trigger an automated build and test process.</li>
+                <li><strong>Job:</strong> A job is a unit of work that can run on the same machine or in parallel on different
+                    machines. The defined job is named "build" and is set to run on the latest version of the Ubuntu
+                    environment. This choice of environment ensures consistency and reproducibility across different workflow
+                    runs.</li>
+                <li><strong>Steps:</strong> Steps are the individual tasks that make up a job. Each step is a command or an
+                    action that GitHub Actions will run. In this workflow:
+                    <ul>
+                        <li>The first step, "Checkout repository," uses the <code>actions/checkout</code> action to fetch the
+                            latest version of the code from the repository. This is a crucial step as it provides the workflow
+                            with the codebase to operate on.</li>
+                        <li>The second step, "Set up Node.js," utilizes the <code>actions/setup-node</code> action to set up the
+                            Node.js environment. This is essential for JavaScript-based projects.</li>
+                        <li>The third step, "Install dependencies," runs the command <code>npm install</code> to install project
+                            dependencies. This assumes the presence of a <code>package.json</code> file with defined
+                            dependencies.</li>
+                        <li>The fourth step, "Build," executes the build script using <code>npm run build</code>. The specifics
+                            of the build script depend on your project and may involve tasks like compiling code, running tests,
+                            or generating artifacts.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Viewing Workflow Runs</h2>
+            <p>The "Actions" tab in your GitHub repository is the central hub for monitoring workflow runs. Once the workflow is
+                triggered, you can navigate to this tab to view a detailed log of each run. The log provides information on
+                every step, including the commands executed and their outcomes. It's a valuable tool for diagnosing issues,
+                verifying successful builds, and understanding the overall workflow performance.</p>
+
+            <h2>Expanding the Workflow</h2>
+            <p>GitHub Actions offers extensive customization possibilities through the use of actions. Actions are reusable
+                units of code that can be combined to create powerful workflows. The GitHub Actions Marketplace is a repository
+                of community-contributed actions that cover a wide range of tasks. You can explore this marketplace to find
+                actions that suit your project's needs, whether it's deploying to a cloud service, sending notifications, or
+                automating other development tasks.</p>
+            <p>Additionally, you can expand your workflow by incorporating features such as conditional execution, matrix builds
+                for testing across multiple environments, and even integrating with third-party services. The flexibility of
+                GitHub Actions empowers you to tailor your automation to the specific requirements of your project.</p>
+            <h2>Some examples</h2>
+            <a href="https://github.com/APf0x/APf0x" target="_blank">My github account</a> 
+            <p>˙ᵕ˙</p>
+        </div>
+        <br>
+    </div>
+</body>
+
+
+</html>

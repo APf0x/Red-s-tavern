@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Website Template</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            scrollbar-width: thin; 
+            scrollbar-width: thin;
             scrollbar-color: #333333 #f5f5f5;
-            -ms-overflow-style: none; 
+            -ms-overflow-style: none;
+
         }
 
         body::-webkit-scrollbar {
-            width: 12px; 
+            width: 12px;
         }
 
         body::-webkit-scrollbar-thumb {
@@ -20,7 +22,7 @@
         }
 
         body::-webkit-scrollbar-track {
-            background-color: #f5f5f5; 
+            background-color: #f5f5f5;
         }
 
         body {
@@ -31,20 +33,16 @@
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
+
         }
 
-        .black-block {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-            color: white;
-            padding: 30px;
-        }
 
         .options {
             display: flex;
             justify-content: space-around;
             padding: 30px 0;
         }
-        
+
         .options a {
             position: relative;
             color: rgb(255, 255, 255);
@@ -52,7 +50,7 @@
             padding: 15px;
             overflow: hidden;
         }
-        
+
         .options a::before {
             content: '';
             position: absolute;
@@ -64,14 +62,9 @@
             transition: opacity 0.3s;
             z-index: -1;
         }
-        
+
         .options a:hover::before {
             opacity: 0;
-        }
-
-        .content {
-            padding: 30px;
-            color: white;
         }
 
 
@@ -79,14 +72,18 @@
             padding: 20px 0;
         }
 
-        #content {
-            background-color: rgba(0, 0, 0, 0.6);
-            margin: 30px;
-            border-radius: 15px;
-            margin: 30px;
+        #TutorialContent {
+            display: none;
         }
-        #aboutMeContent {
-            display: none; 
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -96,17 +93,19 @@
     <div class="black-block">
         <h1>Red's tavern</h1>
         <div class="options">
-            <a style="font-size: 160%;" onclick="toggleAboutMe()">About Me</a>
+            <a style="font-size: 160%;" onclick="toggleAboutMe()">Tutorials</a>
             <a href="#introduction" style="font-size: 160%;">Introduction</a>
             <a href="#contact" style="font-size: 160%;">Contact</a>
         </div>
     </div>
 
-    <div align="center" class="content" id="content">
-        <div id = "all">
+    <div align="center" class="content">
+        <div id="all">
             <section id="about">
                 <h2 style="font-size: 160%;">🦊 ~ 𝓐𝓫𝓸𝓾𝓽 𝓶𝓮 ~ 🦊</h2>
-                <p style="font-size: 160%;">Hi, this is fox. A coding student and programmer. I spend my free time working on various projects and studying. I'm currently learning various algorithms, pointers, and much more. Feel free to contact me on my social media 😄😄😄.</p>
+                <p style="font-size: 160%;">Hi, this is fox. A coding student and programmer. I spend my free time
+                    working on various projects and studying. I'm currently learning various algorithms, pointers, and
+                    much more. Feel free to contact me on my social media 😄😄😄.</p>
             </section>
 
             <section id="introduction">
@@ -119,29 +118,41 @@
                 <p style="font-size: 160%;">I'm a bit shy, no contact details for now!</p>
             </section>
         </div>
-        <div id="aboutMeContent"> 
-                <h2 style="font-size: 160%;">🦊 ~ 𝓐𝓫𝓸𝓾𝓽 𝓶𝓮 ~ 🦊</h2>
-                <p style="font-size: 160%;">Hi</p>
+        <div id="TutorialContent">
+            <h2 style="font-size: 160%;">🦊 ~ 𝓣𝓾𝓽𝓸𝓻𝓲𝓪𝓵𝓼 ~ 🦊</h2>
+            <div class="button" onclick="window.location.href='temp.html'">
+                <h2>A Comprehensive Guide to Awesome Window Manager (Awesome WM)</h2>
+                <p>Awesome is a dynamic window manager for the X Window System that is highly configurable, fast, and
+                    primarily targeted at power users who want to have fine-grained control over their window manager.
+                    It is written and configured in Lua.</p>
+            </div>
+            <div class="button" onclick="window.location.href='update.html'">
+                <h2>GitHub Actions Tutorial</h2>
+                <p>GitHub Actions is a powerful tool that allows you to automate workflows directly in your GitHub
+                    repository. You
+                    can use it to build, test, and deploy your projects.</p>
+            </div>
         </div>
     </div>
 
     <script>
-        let aboutMeClicked = false;
+        let TutorialClicked = false;
 
         function toggleAboutMe() {
             const allContent = document.getElementById('all');
-            const aboutMeContent = document.getElementById('aboutMeContent');
+            const TutorialContent = document.getElementById('TutorialContent');
 
-            if (aboutMeClicked) {
-                allContent.style.display = 'block'; 
-                aboutMeContent.style.display = 'none';
-                aboutMeClicked = false;
+            if (TutorialClicked) {
+                allContent.style.display = 'block';
+                TutorialContent.style.display = 'none';
+                TutorialClicked = false;
             } else {
                 allContent.style.display = 'none';
-                aboutMeContent.style.display = 'block'; 
-                aboutMeClicked = true;
+                TutorialContent.style.display = 'block';
+                TutorialClicked = true;
             }
         }
     </script>
 </body>
+
 </html>

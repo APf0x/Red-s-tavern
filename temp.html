@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Awesome WM Comprehensive Guide</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+            font-family:  'Bold Script';
+            background-color: #181a1b;
         }
 
         h1 {
             text-align: center;
+            padding: 5px 10px;
         }
 
         h2 {
@@ -20,44 +21,84 @@
         }
 
         code {
-            background-color: #f4f4f4;
+            background-color: #000000;
             border: 1px solid #ddd;
             padding: 5px 10px;
             border-radius: 5px;
+            margin-bottom: 10px;
+            display: inline-block;
         }
+        
+
     </style>
+    <script>
+        function changeColor() {
+           const contentDiv = document.querySelector('.content');
+           let predestinedColor;
+           if (contentDiv.style.backgroundColor === 'rgba(0, 0, 0, 0.8)') {
+               predestinedColor = 'rgba(0, 0, 0, 0.6)';
+           } else {
+               predestinedColor = 'rgba(0, 0, 0, 0.8)';
+           }
+           contentDiv.style.backgroundColor = predestinedColor;
+        }
+    </script>
+
 </head>
 
 <body>
-    <h1>Comprehensive Guide to Awesome Window Manager (Awesome WM)</h1>
+    <br>
+    <div class="content">
+        <div class="buttons-container">
+            <div class="back-arrow" onclick="window.location.href='index.html'">← go back</a></div>
+            <div class="back-arrow" style="float: right;" onclick="changeColor()">change opacity for concentration</div>
+        </div>
+        <h1>Comprehensive Guide to Awesome Window Manager (Awesome WM)</h1>
 
-    <h2>Introduction to Awesome WM</h2>
-    <p>
-        Awesome is a dynamic window manager for the X Window System that is highly configurable, fast, and primarily targeted at power users who want to have fine-grained control over their window manager. It is written and configured in Lua.
-    </p>
+        <h2>Introduction to Awesome WM</h2>
+        <p>
+            Awesome Window Manager (Awesome WM) is a highly flexible and dynamic window manager designed for the X Window System. It stands out for its exceptional configurability, speed, and targeted appeal to power users who seek precise control over their window manager. Written and configured in the Lua programming language, Awesome WM encourages users to tailor their desktop environment to meet their unique workflow and preferences.
+        </p>
 
-    <h2>Getting Started</h2>
-    <p>To install Awesome WM on various Linux distributions, refer to their respective package managers. For Ubuntu:</p>
-    <code>sudo apt update</code><br>
-    <code>sudo apt install awesome</code>
+        <h2>Getting Started</h2>
+        <p>
+            Installing Awesome WM is straightforward, with package manager commands varying across Linux distributions. On Ubuntu, for instance, open a terminal and run the following commands:
+        </p>
+        <code>sudo apt update</code><br>
+        <code>sudo apt install awesome</code>
 
-    <h2>Basic Configurations</h2>
-    <p>To configure Awesome WM, modify the <code>rc.lua</code> file located at <code>~/.config/awesome/rc.lua</code>. Here are some sample configurations:</p>
-    <code>-- Change the default theme</code><br>
-    <code>beautiful.init("~/.config/awesome/themes/mytheme/theme.lua")</code><br>
+        <h2>Basic Configurations</h2>
+        <p>
+            After installation, you can customize Awesome WM by modifying the <code>rc.lua</code> file found at <code>~/.config/awesome/rc.lua</code>. This Lua script serves as the configuration file and allows you to make adjustments to various settings. For example, changing the default theme involves using the following code snippet:
+        </p>
+        <code>-- Change the default theme</code><br>
+        <code>beautiful.init("~/.config/awesome/themes/mytheme/theme.lua")</code><br>
+        <p>
+            This snippet points to a theme file that defines the visual appearance of your Awesome WM desktop. Exploring and experimenting with different themes can significantly enhance the aesthetics of your workspace.
+        </p>
 
+        <h2>Keybindings</h2>
+        <p>
+            Keybindings are a central aspect of Awesome WM, allowing users to interact efficiently with the window manager. The configuration for keybindings is typically found in the <code>rc.lua</code> file. For instance, the following code binds the <code>modkey + b</code> combination to toggle the visibility of the wibar (status bar):
+        </p>
+        <code>awful.key({ modkey }, "b", function () myscreen = mouse.screen; myscreen.bar.visible = not myscreen.bar.visible end, {description = "toggle wibar", group = "awesome"})</code>
+        <p>
+            The <code>modkey</code> represents the modifier key, which is often the <code>Mod4</code> key (usually the Super/Windows key). Customizing keybindings according to your workflow is essential for a seamless experience with Awesome WM.
+        </p>
 
-    <h2>Keybindings</h2>
-    <p>Customize keybindings in Awesome WM to suit your preferences:</p>
-    <code>awful.key({ modkey }, "b", function () myscreen = mouse.screen; myscreen.bar.visible = not myscreen.bar.visible end, {description = "toggle wibar", group = "awesome"})</code>
-
-    <h2>Useful Resources</h2>
-    <p>Explore the official Awesome WM documentation and community for further information and support:</p>
-    <ul>
-        <li><a href="https://awesomewm.org/">Awesome WM Official Website</a></li>
-        <li><a href="https://github.com/awesomeWM/awesome">Awesome WM GitHub Repository</a></li>
-
-    </ul>
+        <h2>Useful Resources</h2>
+        <p>
+            To delve deeper into Awesome WM and seek support, explore the following official resources:
+        </p>
+        <ul>
+            <li><a href="https://awesomewm.org/" target="_blank">Awesome WM Official Website</a></li>
+            <li><a href="https://github.com/awesomeWM/awesome" target="_blank">Awesome WM GitHub Repository</a></li>
+        </ul>
+    </div>
+    <br><br>
+    
+    
 </body>
+
 
 </html>
