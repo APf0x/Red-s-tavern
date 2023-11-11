@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Awesome WM Comprehensive Guide</title>
     <link rel="stylesheet" href="style.css">
+    <script src="functions.js" defer></script><!--remember that defer is there to make sure that the scrips can run only after the whole page is loaded so you dont mess it up-->
     <style>
         body {
             font-family:  'Bold Script';
@@ -31,18 +32,6 @@
         
 
     </style>
-    <script>
-        function changeColor() {
-           const contentDiv = document.querySelector('.content');
-           let predestinedColor;
-           if (contentDiv.style.backgroundColor === 'rgba(0, 0, 0, 0.8)') {
-               predestinedColor = 'rgba(0, 0, 0, 0.6)';
-           } else {
-               predestinedColor = 'rgba(0, 0, 0, 0.8)';
-           }
-           contentDiv.style.backgroundColor = predestinedColor;
-        }
-    </script>
 
 </head>
 
