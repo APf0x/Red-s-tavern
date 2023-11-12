@@ -41,6 +41,7 @@
             display: flex;
             justify-content: space-around;
             padding: 30px 0;
+            font-size: 160%;
         }
 
         .options a {
@@ -92,11 +93,11 @@
 
     <div class="black-block">
         <h1>Red's tavern</h1>
-        <div class="options">
-            <a style="font-size: 160%;" onclick="toggleAboutMe()">Tutorials</a>
-            <a href="#introduction" style="font-size: 160%;">Introduction</a>
-            <a href="#contact" style="font-size: 160%;">Contact</a>
-        </div>
+        <nav class="options">
+            <a onclick="toggleAboutMe()">Tutorials</a>
+            <a href="#introduction">Introduction</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
 
     <div align="center" class="content">
@@ -105,21 +106,18 @@
                 <h2 style="font-size: 160%;">🦊 ~ 𝓐𝓫𝓸𝓾𝓽 𝓶𝓮 ~ 🦊</h2>
                 <p style="font-size: 160%;">Hi, this is fox. A coding student and programmer. I spend my free time
                     working on various projects and studying. I'm currently learning various algorithms, pointers, and
-                    much more. Feel free to contact me on my social media 😄😄😄.</p>
-            </section>
+                    much more. Feel free to contact me on my social media 😄😄😄.
 
-            <section id="introduction">
-                <h2 style="font-size: 160%;">🦊 ~ 𝓘𝓷𝓽𝓻𝓸𝓭𝓾𝓬𝓽𝓲𝓸𝓷 ~ 🦊</h2>
-                <p style="font-size: 160%;">Hey people!</p>
             </section>
-
-            <section id="introduction">
+            <section id="tutorial">
                 <h2 style="font-size: 160%;">🦊 ~ 𝓣𝓾𝓽𝓸𝓻𝓲𝓪𝓵𝓼 ~ 🦊</h2>
                 <p style="font-size: 160%;">Some of the tutorials that i have made</p>
                 <div class="button" onclick="window.location.href='temp.html'">
                     <h2>A Comprehensive Guide to Awesome Window Manager (Awesome WM)</h2>
-                    <p>Awesome is a dynamic window manager for the X Window System that is highly configurable, fast, and
-                        primarily targeted at power users who want to have fine-grained control over their window manager.
+                    <p>Awesome is a dynamic window manager for the X Window System that is highly configurable, fast,
+                        and
+                        primarily targeted at power users who want to have fine-grained control over their window
+                        manager.
                         It is written and configured in Lua.</p>
                 </div>
                 <div class="button" onclick="window.location.href='update.html'">
@@ -128,9 +126,17 @@
                         repository. You
                         can use it to build, test, and deploy your projects.</p>
                 </div>
-                <div style=" font-size: 24px; cursor: pointer; color: #ffffff; padding: 10px;" onclick="toggleAboutMe()">More →</a></div>
-                
+                <div style=" font-size: 24px; cursor: pointer; color: #ffffff; padding: 10px;"
+                    onclick="toggleAboutMe()">More →</a></div>
+
             </section>
+
+            <section id="introduction">
+                <h2 style="font-size: 160%;">🦊 ~ 𝓘𝓷𝓽𝓻𝓸𝓭𝓾𝓬𝓽𝓲𝓸𝓷 ~ 🦊</h2>
+                <p style="font-size: 160%;">Hey people!</p>
+            </section>
+
+
 
             <section id="contact">
                 <h2 style="font-size: 160%;">🦊 ~ 𝓒𝓸𝓷𝓽𝓪𝓬𝓽 ~ 🦊</h2>
@@ -151,7 +157,14 @@
                     repository. You
                     can use it to build, test, and deploy your projects.</p>
             </div>
-            
+            <div class="button" onclick="window.location.href='soup.html'">
+                <h2>Web Scraping with Python: Extracting Information with BeautifulSoup</h2>
+                <p>Web scraping is a powerful technique used to extract data from websites. In this tutorial, we'll
+                    explore the basics of web scraping using Python, with a focus on the BeautifulSoup library.
+                    BeautifulSoup makes it easy to navigate and search the HTML structure of a webpage, allowing you to
+                    extract the information you need.</p>
+            </div>
+
         </div>
     </div>
     <br>

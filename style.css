@@ -53,3 +53,11 @@ body {
     transform: scale(1.05) rotate(3deg);
     background-color: rgba(36, 70, 44, 0.5); /* Adjust the color change as needed */
 }
+pre {
+    background-color: #1c1e1f;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 10px;
+    display: inline-block;
+}
