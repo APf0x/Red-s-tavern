@@ -1,10 +1,11 @@
 [
     {
-        "title": "Post 1",
-        "content": "## Subtitle 1\n* Item 1\n* Item 2"
+      "title": "Post 1",
+      "content": "This is the content of Post 1. <strong>Important information!</strong>"
     },
     {
-        "title": "Post 2",
-        "content": "## Subtitle 2\n* Item 1\n* Item 2\n* Item 3"
+      "title": "Post 2",
+      "content": "Another post with <strong>strong</strong> emphasis."
     }
-]
+  ]
+  

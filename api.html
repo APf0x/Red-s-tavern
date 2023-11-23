@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Website Template</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles remain unchanged for brevity */
+    </style>
+</head>
+
+<body>
+
+    <div class="black-block">
+        <h1>Red's tavern</h1>
+        <nav class="options">
+            <a onclick="toggleAboutMe()">Tutorials</a>
+            <a href="#introduction">Introduction</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+
+    <div align="center" class="content">
+        <div id="all">
+            <!-- Existing sections remain unchanged -->
+        </div>
+        <div id="TutorialContent">
+            <h2 style="font-size: 160%;">🦊 ~ 𝓣𝓾𝓽𝓸𝓻𝓲𝓪𝓵𝓼 ~ 🦊</h2>
+            <!-- Placeholder for dynamic content -->
+            <div id="dynamicContent"></div>
+        </div>
+    </div>
+    <br>
+
+    <script>
+        let TutorialClicked = false;
+
+        function toggleAboutMe() {
+            const allContent = document.getElementById('all');
+            const TutorialContent = document.getElementById('TutorialContent');
+
+            if (TutorialClicked) {
+                allContent.style.display = 'block';
+                TutorialContent.style.display = 'none';
+                TutorialClicked = false;
+            } else {
+                allContent.style.display = 'none';
+                TutorialContent.style.display = 'block';
+                TutorialClicked = true;
+
+                // Load dynamic content from the server
+                loadDynamicContent();
+            }
+        }
+
+        function loadDynamicContent() {
+            // Make a request to your server or API to get updated content
+            // For demonstration, we use JSONPlaceholder as a mock API
+            fetch('https://jsonplaceholder.typicode.com/posts')
+                .then(response => response.json())
+                .then(data => {
+                    const dynamicContentContainer = document.getElementById('dynamicContent');
+
+                    // Clear previous content
+                    dynamicContentContainer.innerHTML = '';
+
+                    // Display dynamic content
+                    data.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.innerHTML = `
+                            <div class="button">
+                                <h2>${post.title}</h2>
+                                <p>${post.body}</p>
+                            </div>
+                        `;
+                        dynamicContentContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching dynamic content:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

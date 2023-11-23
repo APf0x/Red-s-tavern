@@ -5,13 +5,20 @@
 }
 
 .content {
+    
     background-color: rgba(0, 0, 0, 0.6);
     transition: background-color 0.5s ease;
     margin: 30px;
     border-radius: 15px;
     padding: 30px;
     color: white;
-
+    
+}
+.inner {
+    margin: auto;
+    width: 50%; /* Adjust the width as needed */
+    text-align: left;
+    padding: 10px;
 }
 body {
     margin: 0;
@@ -60,4 +67,5 @@ pre {
     overflow: auto;
     border-radius: 10px;
     display: inline-block;
+    width: 100%;
 }
