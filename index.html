@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Website Template</title>
     <link rel="stylesheet" href="style.css">
+    <script src="functions.js" defer></script>
     <style>
         body {
             scrollbar-width: thin;
@@ -93,9 +94,11 @@
 <body>
 
     <div class="black-block">
-        <h1>Red's tavern</h1>
+        <img  style="width: 5vw; max-width: 100%; margin-left: 80px;" src="foxresting3.png">
+        <h1 style="margin: 0;">Red's tavern</h1>
+        
         <nav class="options">
-            <a onclick="toggleAboutMe()">Tutorials</a>
+            <a id = "Aboutme" onclick="toggleAboutMe()">Tutorials</a>
             <a href="#introduction">Introduction</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -137,14 +140,9 @@
                 <h2 style="font-size: 160%;">🦊 ~ 𝓘𝓷𝓽𝓻𝓸𝓭𝓾𝓬𝓽𝓲𝓸𝓷 ~ 🦊</h2>
                 <p style="font-size: 160%;">Hey people!</p>
             </section>
-
-
-
-            <section id="contact">
-                <h2 style="font-size: 160%;">🦊 ~ 𝓒𝓸𝓷𝓽𝓪𝓬𝓽 ~ 🦊</h2>
-                <p style="font-size: 160%;">I'm a bit shy, no contact details for now!</p>
-            </section>
         </div>
+
+
         <div id="TutorialContent">
             <h2 style="font-size: 160%;">🦊 ~ 𝓣𝓾𝓽𝓸𝓻𝓲𝓪𝓵𝓼 ~ 🦊</h2>
             <div class="button" onclick="window.location.href='temp.html'">
@@ -166,30 +164,30 @@
                     BeautifulSoup makes it easy to navigate and search the HTML structure of a webpage, allowing you to
                     extract the information you need.</p>
             </div>
-            
-
+            <br><br><br><br><br><br>
         </div>
+        
     </div>
     <br>
+    <footer class="content">
+        <p>&copy; 2023 Website. Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License</a>.</p>
+        <p>Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
+        <p>Contact: your-email@example.com</p>
+    </footer>
+    
+    <br><br><br><br>
 
-    <script>
-        let TutorialClicked = false;
 
-        function toggleAboutMe() {
-            const allContent = document.getElementById('all');
-            const TutorialContent = document.getElementById('TutorialContent');
-
-            if (TutorialClicked) {
-                allContent.style.display = 'block';
-                TutorialContent.style.display = 'none';
-                TutorialClicked = false;
-            } else {
-                allContent.style.display = 'none';
-                TutorialContent.style.display = 'block';
-                TutorialClicked = true;
-            }
+<script>
+    window.onload = function() {
+        // Check if the tutorialClicked parameter is present in the URL
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('tutorialClicked') === 'true') {
+            // Your script logic here
+            toggleAboutMe();
         }
-    </script>
+    };
+</script>
 </body>
 
 </html>

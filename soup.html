@@ -12,12 +12,12 @@
     <br>
     <div class="content">
         <div class="buttons-container">
-            <div class="back-arrow" onclick="window.location.href='index.html'">← go back</a></div>
+            <div class="back-arrow" onclick="goToIndex()">← go back</a></div>
             <div class="back-arrow" style="float: right;" onclick="changeColor()">change opacity for concentration</div>
         </div>
         <div class="inner">
             <h1>Web Scraping with Python: Extracting Information with BeautifulSoup</h1>
-            
+
             <h2>Introduction</h2>
             <p>
                 Web scraping is a powerful technique used to extract data from websites. In this tutorial, we'll explore the
@@ -26,7 +26,7 @@
                 navigate
                 and search the HTML structure of a webpage, allowing you to extract the information you need.
             </p>
-        
+
             <h2>Prerequisites</h2>
             <p>
                 Before you begin, make sure you have Python installed on your machine. You can download it from
@@ -36,25 +36,25 @@
                 Also, install the required libraries using the following command:
             </p>
             <pre><code>pip install requests beautifulsoup4</code></pre>
-        
+
             <h2>Getting Started</h2>
-        
+
             <h3>Understanding HTML Structure</h3>
             <p>
                 Before scraping, inspect the HTML structure of the webpage you want to extract data from. Familiarize
                 yourself
                 with HTML tags, classes, and the overall structure.
             </p>
-        
+
             <h3>Importing Libraries</h3>
             <p>
                 Create a new Python file and import the necessary libraries:
             </p>
             <pre><code>import requests
 from         bs4 import BeautifulSoup</code></pre>
-            
+
             <h2>Making a Request</h2>
-            
+
             <h3>Sending a Request</h3>
             <p>
                 Use the requests library to send an HTTP request to the webpage:
@@ -64,7 +64,7 @@ resp        onse = requests.get(url)</code></pre>
             <p>
                 Replace 'https://example.com' with the URL of the webpage you want to scrape.
             </p>
-        
+
             <h3>Checking the Status Code</h3>
             <p>
                 Check if the request was successful by examining the status code:
@@ -73,9 +73,9 @@ resp        onse = requests.get(url)</code></pre>
             print('Request successful')
 else        :
             print(f'Request failed with status code {response.status_code}')</code></pre>
-            
+
             <h2>Parsing HTML with BeautifulSoup</h2>
-            
+
             <h3>Creating a BeautifulSoup Object</h3>
             <p>
                 Parse the HTML content using BeautifulSoup:
@@ -84,7 +84,7 @@ else        :
             <p>
                 Use 'html.parser' as the parser.
             </p>
-        
+
             <h3>Navigating the HTML</h3>
             <p>
                 Use BeautifulSoup to navigate the HTML structure. For example, to find all links on the page:
@@ -95,9 +95,9 @@ for         link in links:
             <p>
                 Adjust the tag name ('a' in this case) based on the elements you want to extract.
             </p>
-        
+
             <h2>Extracting Specific Information</h2>
-        
+
             <h3>Extracting Text</h3>
             <p>
                 Extract text from specific HTML elements:
@@ -107,7 +107,7 @@ prin        t(f'Title: {title}')</code></pre>
             <p>
                 Replace title with the desired tag or class.
             </p>
-        
+
             <h3>Finding Elements by Class</h3>
             <p>
                 Find elements by class:
@@ -118,7 +118,7 @@ for         item in items:
             <p>
                 Replace 'item' with the class name you want to target.
             </p>
-        
+
             <h2>Conclusion</h2>
             <p>
                 Congratulations! You've learned the basics of web scraping using Python and BeautifulSoup. Remember to
