@@ -92,13 +92,21 @@
 <script src="markdown-tag.js"></script>
 
 <body>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('tutorialClicked') === 'true') {
+                toggleAboutMe();
+            }
+        };
+    </script>
 
     <div class="black-block">
         <img  style="width: 5vw; max-width: 100%; margin-left: 50px;" src="foxresting3.png">
         <h1 style="margin: 0;">Red's tavern</h1>
         
         <nav class="options">
-            <a id = "Aboutme" onclick="toggleAboutMe()">Tutorials</a>
+            <a id = "Aboutme" href="#non" onclick="toggleAboutMe()">Tutorials</a>
             <a href="#introduction">Introduction</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -177,16 +185,8 @@
     <br><br><br><br>
 
 
-<script>
-    window.onload = function() {
-        // Check if the tutorialClicked parameter is present in the URL
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('tutorialClicked') === 'true') {
-            // Your script logic here
-            toggleAboutMe();
-        }
-    };
-</script>
+
+
 </body>
 
 </html>
